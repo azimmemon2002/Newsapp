@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+
+<link rel="stylesheet" href="{% static 'css\news_style.css'%}" />
+
+{% endblock head %} {% block body %}
+
+<div class="container" id="container" style="height: 457px; margin-top: 50px">
+  <hr />
+  <h1>This is News website based on Python Django</h1>
+  <hr />
+  <h1>Website Use RealTime Data</h1>
+  <hr />
+  <h1>This data is based on Inshorts Api</h1>
+  <hr />
+  <h1>Click Here to go to Inshort Website</h1>
+  <br />
+  <div class="text-center">
+    <a
+      href="https://www.inshorts.com/en/read"
+      target="_blank"
+      class="btn btn-outline-success"
+    >
+      inshorts website</a
+    >
+  </div>
+</div>
+{% endblock body %}

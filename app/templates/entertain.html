@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+
+<link rel="stylesheet" href="{% static 'css\news_style.css'%}" />
+{% endblock head %} {% block body %}
+
+<div class="container" id="container">
+  <h1 id="category">Top {{api_data.category|title}} Headlines</h1>
+  <hr id="firstline" />
+  <div class="row g-5">
+    {% for content in api_data.data %}
+    <div class="col-md-4 g-5">
+      <div class="card shadow" style="margin-bottom: 42px; border-radius: 1rem;box-shadow: 1px 1px 20px 2px #8888;">
+        <div class="card-img">
+          <img src="{{content.imageUrl}}" class="card-img-top" />
+
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-center">{{content.title}}</h5>
+          <hr />
+
+          <p class="card-text">{{content.content|truncatechars:200}}</p>
+          <hr />
+
+          <p class="card-text text-center">{{content.date}}</p>
+          <hr />
+          <div class="text-center">
+            <a href="{{content.url}}" target="_blank" class="btn btn-outline-success">
+              Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock body %}

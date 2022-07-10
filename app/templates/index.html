@@ -1,0 +1,152 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+
+<link rel="stylesheet" href="{% static 'css\news_style.css'%}" />
+<script src="{% static 'js\script.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css\index.css'%}" />
+{% endblock head %} {% block body %}
+
+<section class="homeblock1 py-sm-2 py-4">
+  <div class="container py-md-4">
+    <h1 style="color: red">Categories</h1>
+    <hr style="border: 1px solid" />
+    <div class="row">
+      <div class="col-lg-3 col-6 grids-feature">
+        <a href="{% url 'n_sports' %}">
+          <div class="area-box">
+            <h4>Sports</h4>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-6 grids-feature">
+        <a href="{% url 'n_business' %}">
+          <div class="area-box">
+            <h4>Business</h4>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-6 grids-feature">
+        <a href="{% url 'n_entertain' %}">
+          <div class="area-box">
+            <h4>Entertainment</h4>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-6 grids-feature">
+        <a href="{% url 'n_science' %}">
+          <div class="area-box">
+            <h4>Science</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+    <br />
+    <div class="row justify-content-center">
+      <div class="col-lg-3 col-6 grids-feature">
+        <div class="area-box">
+          <button class="btn btn-link" style="text-decoration: none !important;color: black;background-color: #ffffff; box-shadow: none;"  
+            type="menu" onclick="toggle_more()">
+          <h4 style="text-decoration: none !important">
+            More Categories</h4>
+        </div>
+      </button>
+      </div>
+    </div>
+    </div>
+    <br/>
+
+
+    <div class="container" id="more_categories" style="display: none;margin-top: -54px;">
+      <div class="row">
+        <div class="col-lg-3 col-6 grids-feature">
+          <a href="{% url 'n_world' %}">
+            <div class="area-box">
+              <h4>World</h4>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-3 col-6 grids-feature">
+          <a href="{% url 'n_national' %}">
+            <div class="area-box">
+              <h4>National</h4>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-3 col-6 grids-feature">
+          <a href="{% url 'n_politics' %}">
+            <div class="area-box">
+              <h4>Politics</h4>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-3 col-6 grids-feature">
+          <a href="{% url 'n_technology' %}">
+            <div class="area-box">
+              <h4>Technology</h4>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-3 col-6 grids-feature">
+          <a href="{% url 'n_startup' %}">
+            <div class="area-box">
+              <h4>Start-up</h4>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-6 grids-feature">
+          <a href="{% url 'n_hatke' %}">
+            <div class="area-box">
+              <h4>Hatke</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<div class="container" id="container">
+  <h1 id="category">Top {{api_data.category|title}} Headlines</h1>
+  <hr id="firstline" />
+  <div class="row gy-5">
+    {% for content in api_data.data %}
+    <!-- <div class="col-md-4 g-5"> -->
+    <div class="col-md-4 g-5">
+    
+      <div class="card shadow"  id='card' style="margin-bottom: 42px; border-radius: 1rem;box-shadow: 1px 1px 20px 2px #8888;">
+        <div class="card-img">
+        <img src="{{content.imageUrl}}" class="card-img-top" />
+      </div>
+        <div class="card-body">
+          <h5 class="card-title text-center">{{content.title}}</h5>
+          <hr />
+
+          <p class="card-text">{{content.content|truncatechars:200}}</p>
+          <hr />
+
+          <p class="card-text text-center">{{content.date}}</p>
+          <hr />
+          <div class="text-center">
+            <a
+              href="{{content.url}}"
+              target="_blank"
+              class="btn btn-outline-success" id="btn"
+            >
+              Read More</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock body %}

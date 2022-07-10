@@ -1,0 +1,28 @@
+.area-box {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: var(--bg-white);
+    box-shadow: 1px 1px 20px 2px #8888;
+    border: 2px solid var(--border-color);
+    padding: 20px;
+    border-radius: var(--border-radius-full);
+    text-align: center;
+    transition: .3s ease;
+    -webkit-transition: .3s ease;
+
+
+}
+
+
+.area-box:hover {
+    box-shadow: red 1px 1px 20px 1px;
+}
+
+
+#more_categories{
+    margin-bottom: 35px;
+}
+
+.row.justify-content-center {
+    margin-top: -29px;
+}
