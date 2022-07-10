@@ -4,7 +4,7 @@ This app is Based on API. It Generate news Dynamically In Card Format.
 I used Bootstrap and Python(Django) Framework.
 
 # Requirment
-- Pyhton Package Djnago 
+- Pyhton Package Django 
 
 # Demo
 # Homepage
