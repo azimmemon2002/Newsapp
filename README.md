@@ -3,6 +3,13 @@ This News App i Created During Summer Internship.
 This app is Based on API. It Generate news Dynamically In Card Format.
 I used Bootstrap and Python(Django) Framework.
 
+# Important
+
+- I remove secret key 
+- You have to add secret key in news>>settings.py directory
+- for that there is a file secret_key.py run that
+- get your secret key and add in to news>>settings.py in SECRET_KEY variable
+
 # Requirment
 - Pyhton Package Django 
 
