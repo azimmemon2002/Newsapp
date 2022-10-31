@@ -5,7 +5,7 @@ import requests
 
 # api_v1 = {'all':"https://inshortsapi.vercel.app/news?category", 'sports':"https://inshortsapi.vercel.app/news?category=sports", 'entertain':"https://inshortsapi.vercel.app/news?category=entertainment", 'science':"https://inshortsapi.vercel.app/news?category=science", 'business':"https://inshortsapi.vercel.app/news?category=business",'world':"https://inshortsapi.vercel.app/news?category=world",'default':"https://inshortsapi.vercel.app/news?category="}
 
-api_v2 = "https://inshorts.deta.dev/news?category="
+api_v2 = "https://inshortsapi.vercel.app/news?category="
 
 
 def index(request):
