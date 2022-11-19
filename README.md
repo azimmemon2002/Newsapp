@@ -3,6 +3,8 @@ This News App i Created During Summer Internship.
 This app is Based on API. It Generate news Dynamically In Card Format.
 I used Bootstrap and Python(Django) Framework.
 
+# Live-Demo: https://azimmemon2002.onrender.com/Newsappdemo/
+
 # Requirment
 - Pyhton Package Django 
 
